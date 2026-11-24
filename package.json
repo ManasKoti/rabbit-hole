@@ -1,0 +1,14 @@
+{
+  "name": "rabbit-hole",
+  "version": "0.1.0",
+  "description": "Find the shortest route between two Wikipedia articles.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=21"
+  }
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rabbit Hole</title>
+<meta name="description" content="Find the shortest way from one Wikipedia article to another, using only links.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap">
+<link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+<main class="page">
+  <header>
+    <h1 class="title"><a href="./" class="title-link">Rabbit Hole</a></h1>
+    <p class="tagline">Find the shortest way from one Wikipedia article to another, using only links.</p>
+  </header>
+
+  <form class="search" id="search-form" autocomplete="off" novalidate>
+    <div class="field">
+      <div class="field-top">
+        <label for="start">From</label>
+        <button type="button" class="random" data-random="start" aria-label="Random starting article">random</button>
+      </div>
+      <input id="start" name="start" type="text" spellcheck="false" placeholder="Any article"
+             role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="start-options">
+      <ul class="options" id="start-options" role="listbox" aria-label="Suggestions" hidden></ul>
+    </div>
+
+    <div class="field">
+      <div class="field-top">
+        <label for="end">To</label>
+        <button type="button" class="random" data-random="end" aria-label="Random destination article">random</button>
+      </div>
+      <input id="end" name="end" type="text" spellcheck="false" placeholder="Any other article"
+             role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="end-options">
+      <ul class="options" id="end-options" role="listbox" aria-label="Suggestions" hidden></ul>
+    </div>
+
+    <button type="submit" class="go" id="go">Find the route</button>
+  </form>
+
+  <section class="outcome" id="outcome" aria-live="polite"></section>
+</main>
+
+<noscript><p class="page">Rabbit Hole needs JavaScript to talk to Wikipedia.</p></noscript>
+<script type="module" src="src/ui/app.js"></script>
+</body>
+</html>
